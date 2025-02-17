@@ -26,18 +26,23 @@ public class Program {
 		sellers = sellerDAO.findAll();
 		System.out.println(sellers);
 		
-		System.out.println();
-		System.out.println("=== TEST 4: seller insert ===");
-		Seller seller = new Seller(null, "Lorenzo", "lorenzo@gmail.com", new Date(), 2000.0, dep);
-		sellerDAO.insert(seller);
-		System.out.println(seller);
+//		System.out.println();
+//		System.out.println("=== TEST 4: seller insert ===");
+//		Seller seller = new Seller(null, "Lorenzo", "lorenzo@gmail.com", new Date(), 2000.0, dep);
+//		sellerDAO.insert(seller);
+//		System.out.println(seller);
 		
 		System.out.println();
 		System.out.println("=== TEST 5: seller update ===");
-		seller = sellerDAO.findById(1);
+		Seller seller = sellerDAO.findById(1);
 		seller.setName("Lucas Barbosa");
 		sellerDAO.update(seller);
 		System.out.println(seller);
 		System.out.println("UPDATE COMPLETED");
+		
+		System.out.println();
+		System.out.println("=== TEST 6: seller delete ===");
+		sellerDAO.deleteById(15);
+		System.out.println("DELETE COMPLETED");
 	}
 }	
