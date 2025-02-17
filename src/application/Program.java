@@ -1,6 +1,7 @@
 package application;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DAOFactory;
@@ -24,5 +25,11 @@ public class Program {
 		System.out.println("=== TEST 3: seller findAll ===");
 		sellers = sellerDAO.findAll();
 		System.out.println(sellers);
+		
+		System.out.println();
+		System.out.println("=== TEST 4: seller insert ===");
+		Seller seller = new Seller(null, "Lorenzo", "lorenzo@gmail.com", new Date(), 2000.0, dep);
+		sellerDAO.insert(seller);
+		System.out.println(seller);
 	}
 }	
